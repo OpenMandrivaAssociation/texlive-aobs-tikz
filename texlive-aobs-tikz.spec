@@ -6,7 +6,7 @@
 # catalog-version 1.0
 Name:		texlive-aobs-tikz
 Version:	1.0
-Release:	5
+Release:	6
 Summary:	TikZ styles for creating overlaid pictures in beamer
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pgf/contrib/aobs-tikz
