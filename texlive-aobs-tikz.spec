@@ -5,9 +5,9 @@ Summary:	TikZ styles for creating overlaid pictures in beamer
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pgf/contrib/aobs-tikz
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.r32662.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.doc.r32662.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.source.r32662.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
