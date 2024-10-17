@@ -3,7 +3,7 @@ Version:	32662
 Release:	2
 Summary:	TikZ styles for creating overlaid pictures in beamer
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/pgf/contrib/aobs-tikz
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/aobs-tikz
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.doc.r%{version}.tar.xz
