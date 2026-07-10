@@ -1,50 +1,27 @@
-Name:		texlive-aobs-tikz
-Version:	32662
-Release:	2
+%global tl_name aobs-tikz
+%global tl_revision 70952
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.01
+Release:	%{tl_revision}.1
 Summary:	TikZ styles for creating overlaid pictures in beamer
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/aobs-tikz
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.source.r%{version}.tar.xz
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/aobs-tikz.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 The package defines auxiliary TikZ styles useful for overlaying
-pictures' elements in Beamer. The TikZ styles are grouped in a
-library, overlay-beamer-styles which is automatically called by
-the package itself. Users may either load just aobs-tikz or the
-library; the latter method necessitates TikZ manual load.
+pictures' elements in Beamer. The TikZ styles are grouped in a library,
+overlay-beamer-styles which is automatically called by the package
+itself. Users may either load just aobs-tikz or the library; the latter
+method necessitates TikZ manual load.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/aobs-tikz/tikzlibraryoverlay-beamer-styles.code.tex
-%doc %{_texmfdistdir}/doc/latex/aobs-tikz/README
-%doc %{_texmfdistdir}/doc/latex/aobs-tikz/aobs-tikz.pdf
-%doc %{_texmfdistdir}/doc/latex/aobs-tikz/example.tex
-#- source
-%doc %{_texmfdistdir}/source/latex/aobs-tikz/aobs-tikz.dtx
-%doc %{_texmfdistdir}/source/latex/aobs-tikz/aobs-tikz.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
